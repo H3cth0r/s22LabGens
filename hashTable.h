@@ -1,4 +1,26 @@
+/*
+=====================================================
+HashTable library and classes
+11/10/2021
+=====================================================
+Héctor Miranda García-A01658845
+Humberto Alejandro Rosas Téllez-A01659823
+Isabel Cristina Valdés Luevanos-A01025802
+Misael Chavez Ramos-A01659759
 
+En este archivo se presentan las clases necesarias 
+para aplicar o desarrollar una hashtable, con sus 
+debidos métodos que permiten manejar los datos en 
+las hashtables. Hay dos clases en el archivo, el 
+archivo Hashpair crea las filas de la hashtable, 
+donde se guardan las llaves y el valor. 
+Posteriormente se tiene el Hashtable, donde se 
+crean los objetos hashpair y se han implementado 
+diferentes métodos ya sea para ingresar filas, 
+obtener filas según la llave, eliminar todos los 
+valores de la tabla, imprimir, entre otros métodos.
+=====================================================
+*/
 /*
 Class that creates the rows of the hashtable, with the capability
 of inputing key on the left and value on the right.

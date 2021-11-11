@@ -1,3 +1,15 @@
+/*
+=====================================================
+HashTable library and classes
+11/10/2021
+=====================================================
+Héctor Miranda García-A01658845
+Humberto Alejandro Rosas Téllez-A01659823
+Isabel Cristina Valdés Luevanos-A01025802
+Misael Chavez Ramos-A01659759
+=====================================================
+*/
+
 #include <iostream>
 #include <fstream> // leer el archivo
 #include <sstream>// tokenizar el string 
