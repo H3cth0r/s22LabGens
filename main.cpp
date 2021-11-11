@@ -36,8 +36,10 @@ void cargaWuhanFasta(vector<string> & datos){
   lector.close();
 }
 int main() {
+  // vector for storing each row into a value from the string
   vector<string> genoma;
   
+  // using this method for readinf the fasta file
   cargaWuhanFasta(genoma);
 
   // vector dictionary of bases
@@ -58,8 +60,11 @@ int main() {
                                              {"GAU", "Asp"}, {"GAC", "Asp"}, {"GAA", "Glu"}, {"GAG", "Glu"},
                                              {"GGU", "Gly"}, {"GGC", "Gly"}, {"GGA", "Gly"}, {"GGG", "Gly"}};
 
+// storing total number of nucleotides
 int num_nucletides = 0, j;
+// storing whole chain in a single string, for easy handling
 string chain="";
+// replaicing T's for U's and storing into chain variable
 for(int i = 0; i < genoma.size(); i++){
   for(j = 0; j < genoma[i].size(); j++){ 
     if(genoma[i][j] == 'T') genoma[i][j] = 'U';
@@ -72,15 +77,23 @@ for(int i = 0; i < genoma.size(); i++){
 
 // for this version  the key will be the base's and the value will act as a counter
 Hashtable<string, int> second_counter_bases(8000);
+// adding the bases dictionary to hashtable
 for(int i = 0; i < bases_dictionary.size(); i++) second_counter_bases.put(bases_dictionary[i][0], 0);
+// counting number of bases for each type and changing in hastable
 for(int i = 0; i < chain.size(); i++){
   second_counter_bases.counter_addition(chain.substr(i, 3), 1);
 }
+// printing all storen bases with the quantity of each one
+cout << "whole stored table with number for each bases:" << endl;
 second_counter_bases.print_filled();
 cout << "=============================" << endl;
+// deleting values smaller than 100 and printing hastable
+cout << "deleted values smaller than 100" << endl;
 second_counter_bases.delete_values(100);
 second_counter_bases.print_filled();
 cout << "=============================" << endl;
+// printing all bases starting with A
+cout << "printing bases starting with A" << endl;
 second_counter_bases.print_starting_with('A');
 
 
